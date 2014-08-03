@@ -13,6 +13,7 @@
 				return person;
             }
 
+			
             var people = [];
             people.push(createPerson("Lisa", 165, 28) );
             people.push(createPerson("Giovanni", 185, 29) );
@@ -21,7 +22,19 @@
             people.push(createPerson("Shaun", 172, 27) );
             people.push(createPerson("Gareth", 166, 23) );
             people.push(createPerson("Karen", 160, 25) );
-            
+			
+			var tallestHeight = 0;
+			var tallestPerson;
+				for( var ii = 0; ii < people.length; ii++)
+				{
+					if(people[ii].height > tallestHeight)
+					{
+						tallestHeight = people[ii].height;
+						tallestPerson = people[ii];
+					}
+				}
+			
+			
 			for( var i = 0; i < people.length; i++)
 			{	
 				console.log(people[i].name);
@@ -29,7 +42,8 @@
 				console.log(people[i].age);
 				console.log("---------");
 			}	
-            //put your for loop here.
+			console.log("The tallest person is: " + tallestPerson.name + " at a whopping " + tallestPerson.height + "cm");
+			
             
         </script>
     </head>
